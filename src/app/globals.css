@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sere-green-50: #f0fdf4;
+  --color-sere-green-100: #dcfce7;
+  --color-sere-green-200: #bbf7d0;
+  --color-sere-green-300: #86efac;
+  --color-sere-green-400: #4ade80;
+  --color-sere-green-500: #22c55e;
+  --color-sere-green-600: #16a34a;
+  --color-sere-green-700: #15803d;
+  --color-sere-green-800: #166534;
+  --color-sere-green-900: #14532d;
+  --color-sere-green-950: #052e16;
+
+  --color-sere-earth-50: #fafaf9;
+  --color-sere-earth-100: #f5f5f4;
+  --color-sere-earth-200: #e7e5e4;
+  --color-sere-earth-300: #d6d3d1;
+  --color-sere-earth-400: #a8a29e;
+  --color-sere-earth-500: #78716c;
+  --color-sere-earth-600: #57534e;
+  --color-sere-earth-700: #44403c;
+  --color-sere-earth-800: #292524;
+  --color-sere-earth-900: #1c1917;
+  --color-sere-earth-950: #0c0a09;
+
+  --color-sere-accent: #f59e0b;
+  --color-sere-accent-hover: #d97706;
+
+  --font-display: var(--font-outfit);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.section-padding {
+  @apply py-12 md:py-16 px-4 md:px-8 max-w-7xl mx-auto;
+}
+
+.container-narrow {
+  @apply max-w-4xl mx-auto;
+}
+
+/* Custom External Component Classes */
+.sere-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full bg-sere-green-100 text-sere-green-800 text-sm font-medium mb-6;
+}
+
+.sere-h1 {
+  @apply text-4xl md:text-5xl font-bold text-sere-earth-900 mb-6 leading-tight tracking-tight;
+  text-wrap: balance;
+}
+
+.sere-h2 {
+  @apply text-4xl md:text-5xl font-bold text-sere-earth-900 mb-4 tracking-tight;
+  text-wrap: balance;
+}
+
+.sere-card {
+  @apply bg-white p-8 rounded-[2rem] shadow-sm border border-sere-earth-100 transition-all duration-500 ease-out hover:shadow-md hover:-translate-y-1;
+}
+
+.sere-card-icon {
+  @apply w-16 h-16 bg-sere-green-50 text-sere-green-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110;
+}
+
+.hero-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(#22c55e 0.5px, transparent 0.5px), radial-gradient(#22c55e 0.5px, #ffffff 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.05;
+}
+
+.sere-input {
+  @apply w-full px-6 py-4 rounded-xl border border-sere-earth-200 focus:ring-4 focus:ring-sere-green-500/10 focus:border-sere-green-500 outline-none transition-all bg-white text-sere-earth-900;
+}
+
+.decoration-number {
+  @apply absolute -top-12 -left-8 text-[12rem] font-black text-sere-earth-500/5 select-none pointer-events-none;
+  line-height: 1;
+}
+
+.marquee-container {
+  @apply overflow-hidden whitespace-nowrap py-12 bg-transparent border-y border-sere-earth-100/10;
+}
+
+.marquee-content {
+  @apply inline-block;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 shadow-xl;
+}
+
+.aura-glow {
+  @apply absolute rounded-full blur-[120px] pointer-events-none opacity-50;
+}
+
+.btn-primary {
+  @apply bg-sere-green-700 hover:bg-sere-green-800 text-white font-medium px-8 py-3 rounded-full transition-all duration-200 inline-flex items-center justify-center shadow-md hover:shadow-lg active:scale-95 disabled:bg-sere-earth-400 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-white border-2 border-sere-green-700 text-sere-green-800 font-medium px-8 py-3 rounded-full transition-all duration-200 inline-flex items-center justify-center hover:bg-sere-green-50 active:scale-95;
+}
