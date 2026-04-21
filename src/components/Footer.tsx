@@ -12,7 +12,6 @@ export default function Footer() {
     e.preventDefault();
     setFormStatus('submitting');
     
-    // Simulate a network request - makes it look like a real dev implementation
     await new Promise(resolve => setTimeout(resolve, 1500));
     setFormStatus('success');
   };
@@ -72,7 +71,6 @@ export default function Footer() {
           >
             <h3 className="text-2xl font-bold mb-8">Enquire Now</h3>
             
-            {/* Form state logic for that 'human' dev touch */}
             {formStatus === 'success' ? (
               <div className="bg-sere-green-50 border-2 border-sere-green-200 p-8 rounded-2xl text-center animate-in fade-in zoom-in duration-300">
                 <div className="w-16 h-16 bg-sere-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">✓</div>
@@ -89,25 +87,25 @@ export default function Footer() {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-sere-earth-600 mb-2">Full Name</label>
-                    <input required type="text" className="sere-input" placeholder="Enter your name" />
+                    <label htmlFor="full-name" className="block text-sm font-medium text-sere-earth-600 mb-2">Full Name</label>
+                    <input id="full-name" name="full-name" required type="text" className="sere-input" placeholder="Enter your name" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-sere-earth-600 mb-2">Phone Number</label>
-                    <input required type="tel" className="sere-input" placeholder="Contact number" />
+                    <label htmlFor="phone" className="block text-sm font-medium text-sere-earth-600 mb-2">Phone Number</label>
+                    <input id="phone" name="phone" required type="tel" className="sere-input" placeholder="Contact number" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-sere-earth-600 mb-2">Interest</label>
-                  <select className="sere-input">
+                  <label htmlFor="interest" className="block text-sm font-medium text-sere-earth-600 mb-2">Interest</label>
+                  <select id="interest" name="interest" className="sere-input">
                     <option>Request a Demo</option>
                     <option>Book a Product Introduction</option>
                     <option>General Enquiry</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-sere-earth-600 mb-2">Message (Optional)</label>
-                  <textarea rows={4} className="sere-input" placeholder="Tell us about your farm..."></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-sere-earth-600 mb-2">Message (Optional)</label>
+                  <textarea id="message" name="message" rows={4} className="sere-input" placeholder="Tell us about your farm..."></textarea>
                 </div>
                 <button 
                   disabled={formStatus === 'submitting'}
