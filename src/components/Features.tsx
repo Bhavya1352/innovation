@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Thermometer, Droplets, RotateCw, Settings2, Zap, Battery, Boxes, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Thermometer, Droplets, RotateCw, Settings2, Zap, Battery, Boxes, ShieldCheck, ArrowUpRight, Wallet } from "lucide-react";
 
 const technicalSpecs = [
   {
@@ -43,6 +43,11 @@ const technicalSpecs = [
     icon: Zap,
     title: "Candling Support",
     description: "Integrated high-intensity inspection lamps for rapid embryo monitoring and batch density checks."
+  },
+  {
+    icon: Wallet,
+    title: "Affordable Setup",
+    description: "Priced at approximately ₹10,000 to ensure that precision technology is accessible to every small farm."
   }
 ];
 
@@ -59,7 +64,7 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {technicalSpecs.map((spec, index) => (
             <div key={index} className="sere-card group hover:border-sere-green-500">
               <div className="sere-card-icon group-hover:bg-sere-green-600 group-hover:text-white transition-all">

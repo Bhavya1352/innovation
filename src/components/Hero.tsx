@@ -15,8 +15,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center gap-2 mb-6">
-            <div className="sere-badge">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="sere-badge !mb-0 px-4 py-1.5 text-sm">
               <span className="flex h-2 w-2 rounded-full bg-sere-green-500 mr-2 animate-pulse"></span>
               Precision Incubation for Indian Farms
             </div>
@@ -26,6 +26,10 @@ export default function Hero() {
             Build Your Own <br className="hidden lg:block" />
             <span className="text-sere-green-700">Hatchery Future.</span>
           </h1>
+
+          <div className="text-sm font-bold text-sere-green-600 uppercase tracking-widest mb-8 border-l-2 border-sere-green-400 pl-4">
+            Helping farmers hatch their own future
+          </div>
 
           <p className="text-xl text-sere-earth-600 mb-10 max-w-lg leading-relaxed font-medium">
             Helping small farmers gain independence with reliable incubation technology. Starting at just <span className="text-sere-earth-900 font-bold underline decoration-sere-green-400 decoration-4">₹10,000</span>.
