@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import DeveloperBadge from "./DeveloperBadge";
 
 export default function Footer() {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -136,7 +137,12 @@ export default function Footer() {
             </Link>
             <p className="text-sere-earth-400 text-sm italic">Helping farmers hatch their own future</p>
           </div>
-          <div className="text-sere-earth-500 text-sm">
+
+          <div className="flex justify-center items-center relative">
+            <DeveloperBadge />
+          </div>
+
+          <div className="text-sere-earth-500 text-sm md:text-right">
             &copy; {new Date().getFullYear()} Sere Innovations. All rights reserved.
           </div>
         </div>
